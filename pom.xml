@@ -4,7 +4,7 @@
 
     <groupId>pl.radical</groupId>
     <artifactId>healthcheck</artifactId>
-    <version>1.0</version>
+    <version>1.1-SNAPSHOT</version>
 
     <name>Java Docker health check app</name>
     <description>In order to avoid importing curl or any other tool into your image, if you haveJava already there,
@@ -21,7 +21,7 @@
         <url>https://github.com/uded/docker-healthcheck-java</url>
         <connection>scm:git:https://github.com/uded/docker-healthcheck-java.git</connection>
         <developerConnection>scm:git:git@github.com:uded/docker-healthcheck-java.git</developerConnection>
-      <tag>healthcheck-1.0</tag>
+      <tag>HEAD</tag>
   </scm>
 
     <dependencies>
