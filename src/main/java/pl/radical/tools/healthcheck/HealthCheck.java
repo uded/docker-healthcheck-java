@@ -2,8 +2,8 @@ package pl.radical.tools.healthcheck;
 
 import com.goebl.david.Webb;
 import com.goebl.david.WebbException;
+import lombok.val;
 import org.json.JSONException;
-import org.json.JSONObject;
 
 /**
  * @author <a href="mailto:lukasz.rzanek@radical.com.pl">Łukasz Rżanek</a>
@@ -21,13 +21,13 @@ public class HealthCheck {
     static boolean checkStatus(String url) {
         try {
             Webb webb = Webb.create();
-            JSONObject response = webb.get(url).ensureSuccess().asJsonObject().getBody();
+            val response = webb.get(url).ensureSuccess().asJsonObject().getBody();
             if (response.has("status") && response.getString("status").equalsIgnoreCase("UP")) {
                 System.out.println(response.toString());
                 return true;
             }
         } catch (JSONException e) {
-            System.out.println("Response not readeable");
+            System.out.println("Response not readable");
         } catch (WebbException e) {
             System.out.println(e.getCause().getMessage());
         }
